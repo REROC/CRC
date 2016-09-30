@@ -54,16 +54,31 @@
         var text_to_change = dropdown.childNodes[0];
         text_to_change.nodeValue = "\n" + location.town + "\n";
 
-        var nameElement = document.getElementById('name');
-        nameElement.innerHTML = location.name;
-        var addressElement = document.getElementById('address');
-        addressElement.innerHTML = location.address;
-        var hoursElement = document.getElementById('hours');
-        hoursElement.innerHTML = location.hours;
-        var contactElement = document.getElementById('contact');
-        contactElement.innerHTML = location.contact;
-        var moreInfoElement = document.getElementById('moreinfo');
-        moreInfoElement.setAttribute("href", location.more_info);
+        if (location.active == true) {
+          var nameElement = document.getElementById('name');
+          nameElement.innerHTML = location.name;
+          var addressElement = document.getElementById('address');
+          addressElement.innerHTML = location.address;
+          var hoursElement = document.getElementById('hours');
+          hoursElement.innerHTML = location.hours;
+          var contactElement = document.getElementById('contact');
+          contactElement.innerHTML = location.contact;
+          var moreInfoElement = document.getElementById('moreinfo');
+          moreInfoElement.setAttribute("href", location.more_info);          
+        }
+        else {
+          var nameElement = document.getElementById('name');
+          nameElement.innerHTML = location.name;
+          var addressElement = document.getElementById('address');
+          addressElement.innerHTML = "Unavailable";
+          var hoursElement = document.getElementById('hours');
+          hoursElement.innerHTML = "Unavailable";
+          var contactElement = document.getElementById('contact');
+          contactElement.innerHTML = "Unavailable";
+          var moreInfoElement = document.getElementById('moreinfo');
+          moreInfoElement.setAttribute("href", "#");          
+        }
+
       }
     </script>
 
