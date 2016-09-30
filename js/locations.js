@@ -3,7 +3,7 @@ var locations = [
         town: "Berrigan",
         name: "Berrigan Landfill",
         address: "Greenhills Road, Berrigan",
-        hours: "Tuesday to Thursday 1:30-4pm, Sunday 12:30-4pm",
+        hours: "Tuesday to Thursday 1:30-4pm<br/>Sunday 12:30-4pm",
         contact: "03 5888 5100",
         more_info: "http://www.berriganshire.nsw.gov.au/Residents/GarbageRecycling.aspx"
     },
@@ -27,7 +27,7 @@ var locations = [
         town: "Coolamon",
         name: "Coolamon Landfill",
         address: "102 Dyces Lane, Coolamon",
-        hours: "Monday: 9am – 1pm Wednesday: 1pm – 5pm Friday: 9am – 12noon Saturday: 1pm - 5pm(Closed Tuesday, Thursday, Sunday)",
+        hours: "Monday: 9am – 1pm<br/>Wednesday: 1pm – 5pm<br/>Friday: 9am – 12noon<br/>Saturday: 1pm - 5pm<br/>(Closed Tuesday, Thursday, Sunday)",
         contact: "02 6930 1800",
         more_info: "http://www.coolamon.nsw.gov.au/residents/waste-and-recycling.aspx"
     },
@@ -75,7 +75,7 @@ var locations = [
         town: "Gundagai",
         name: "Gundagai Landfill & Recycling Centre ",
         address: "Burra Road, Gundagai",
-        hours: "Monday: 7am – 11am, Wednesday: 1pm – 5pm, Friday: 7am - 11am,<br/>Saturday: 11am – 5pm<br/>Sunday: 7am – 1pm<br/>(Closed Tuesday & Thursday)<br/>",
+        hours: "Monday: 7am – 11am<br/>Wednesday: 1pm – 5pm<br/>Friday: 7am - 11am<br/>Saturday: 11am – 5pm<br/>Sunday: 7am – 1pm<br/>(Closed Tuesday & Thursday)<br/>",
         contact: "02 6944 0200",
         more_info: "http://www.gundagai.nsw.gov.au/environment/waste-and-recyling.aspx"
     },
@@ -83,7 +83,7 @@ var locations = [
         town: "Hay",
         name: "Hay Waste Transfer Station",
         address: "Thelangerin Road, Hay",
-        hours: "Monday: 12noon – 6pm<br/>Tuesday, Wednesday, Thursday,<br/>Saturday, Sunday: 7.30am – 6pm<br/>Friday: 7.30am – 1pm",
+        hours: "Monday: 12noon – 6pm<br/>Tuesday, Wednesday, Thursday, Saturday, Sunday: 7.30am – 6pm<br/>Friday: 7.30am – 1pm",
         contact: "02 6990 1100",
         more_info: "http://hay.nsw.gov.au/CouncilServices/WasteRecycling/tabid/75/Default.aspx"
     },
@@ -99,7 +99,7 @@ var locations = [
         town: "Jerilderie",
         name: "Jerilderie Waste Transfer Station",
         address: "Tip Road, Jerilderie",
-        hours: "Mon & Fri: 8–11am Wed: 3–6pm Sun: 2–5pm<br/>Total fire ban day:<br/>Mon & Fri: 8–9am Wed: 3–4pm Sun: 2–3pm",
+        hours: "Mon & Fri: 8–11am<br/>Wed: 3–6pm<br/>Sun: 2–5pm<br/>Total fire ban day:<br/>Mon & Fri: 8–9am<br/>Wed: 3–4pm<br/>Sun: 2–3pm",
         contact: "03 5886 1200",
         more_info: "http://www.jerilderie.nsw.gov.au/environment/waste-recycling.aspx"
     },
@@ -139,7 +139,7 @@ var locations = [
         town: "Narrandera",
         name: "Narrandera Waste Disposal Depot",
         address: "Redhill Road, Narrandera",
-        hours: "Tuesday, Wednesday, Friday:<br/>9am – 12pm & 1pm - 5pm<br/>Saturday & Sunday: 10am – 3pm",
+        hours: "Tuesday, Wednesday, Friday: 9am – 12pm & 1pm - 5pm<br/>Saturday & Sunday: 10am – 3pm",
         contact: "02 6959 3531",
         more_info: "http://www.narrandera.nsw.gov.au/cp_themes/default/page.asp?p=DOC-DGU-06-50-24"
     },

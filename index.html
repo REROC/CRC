@@ -23,12 +23,54 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/locations.js"></script>
+
+    <!-- Town information display/dropdown -->
+    <script>
+      $(document).ready(function(){
+
+        updateJumbotron(locations[0]);
+
+        var list = document.getElementById('dropdown-list');
+        for (var i = 0, len = locations.length; i < len; i++) {
+            var item = document.createElement('li');
+            var a_tag = document.createElement('a');
+            a_tag.appendChild(document.createTextNode(locations[i].town));
+            a_tag.setAttribute("data-target", "#");
+            addListener(a_tag, locations[i]);
+            item.appendChild(a_tag);
+            list.appendChild(item);
+        }
+      });
+
+      function addListener(a_tag, location) {
+        a_tag.addEventListener('click', function(){
+          updateJumbotron(location);
+        }, false);
+      }
+
+      function updateJumbotron(location) {
+        var dropdown = document.getElementById('dropdownMenu1');
+        var text_to_change = dropdown.childNodes[0];
+        text_to_change.nodeValue = "\n" + location.town + "\n";
+
+        var nameElement = document.getElementById('name');
+        nameElement.innerHTML = location.name;
+        var addressElement = document.getElementById('address');
+        addressElement.innerHTML = location.address;
+        var hoursElement = document.getElementById('hours');
+        hoursElement.innerHTML = location.hours;
+        var contactElement = document.getElementById('contact');
+        contactElement.innerHTML = location.contact;
+        var moreInfoElement = document.getElementById('moreinfo');
+        moreInfoElement.setAttribute("href", location.more_info);
+      }
+    </script>
 
     <div class="container center-block">
 
-      <div class="row col-md-10 center-block">
-
-        <div class="col-md-6 pull-left">
+      <div class="row center-block">
+        <div class="col-md-4 col-md-offset-1">
           <img src="img/reroc_waste.jpg" alt="REROC"/>
         </div>
 
@@ -36,13 +78,38 @@
           <img src="img/ramroc.jpg" alt="RAMROC"/>
         </div>
 
-        <div class="col-md-4 pull-right">
+        <div class="col-md-4">
           <img src="img/reroc.jpg" alt="REROC"/>
         </div>
 
       </div>
 
       <img class="center-block" src="img/crc.jpg"/>
+
+      <div class="container center-block">
+        <div class="row" style="padding-bottom: 10px;">
+
+          <div class="dropdown col-md-offset-5">
+            <button class="btn btn-default dropdown-toggle col-md-3" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Town
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="dropdown-list">
+            </ul>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="jumbotron col-md-10 col-md-offset-1">
+            <h1 id="name"></h1>
+            <h2>Address</h2><p id="address"></p>
+            <h2>Hours</h2><p id="hours"></p>
+            <h2>Contact</h2><p id="contact"></p>
+            <p><a id="moreinfo" class="btn btn-primary btn-lg" href="#" role="button">More Info</a></p
+          </div>
+        </div>
+
+      </div>
 
       <div class="container">
 
