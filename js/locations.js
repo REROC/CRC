@@ -1,59 +1,5 @@
 var locations = [
     {
-        town: "Coolamon",
-        name: "Coolamon Landfill",
-        address: "102 Dyces Lane, Coolamon",
-        hours: "Monday: 9am – 1pm<br/>Wednesday: 1pm – 5pm<br/>Friday: 9am – 12noon<br/>Saturday: 1pm - 5pm<br/>(Closed Tuesday, Thursday, Sunday)",
-        contact: "02 6930 1800",
-        more_info: "http://www.coolamon.nsw.gov.au/residents/waste-and-recycling.aspx",
-        active: true
-    },
-    {
-        town: "Cootamundra",
-        name: "Cootamundra Waste Transfer Station",
-        address: "Turners Lane, Cootamundra",
-        hours: "Monday, Tuesday, Thursday, Friday: 8.30am – 4.30pm<br/>Wednesday: 1.30pm – 4.30pm<br/>Saturday: 1pm – 5pm<br/>Sunday: 9am – 5pm",
-        contact: "02 6940 2100",
-        more_info: "http://www.cootamundra.nsw.gov.au/engineering/waste-recycling-drummuster.aspx",
-        active: true
-    },
-    {
-        town: "Lockhart",
-        name: "Lockhart Waste Depot",
-        address: "Tip Road, Lockhart",
-        hours: "Wednesday: 8.30am – 10.30am<br/>Alternate Sunday: 8.30am – 11.30am",
-        contact: "02 6920 5305",
-        more_info: "http://www.lockhart.nsw.gov.au/environment/waste-recycling.aspx",
-        active: true
-    },
-    {
-        town: "Tumut",
-        name: "Gilmore Waste & Recycling Centre",
-        address: "Killarney Drive, Tumut",
-        hours: "Tuesday & Thursday: 1pm – 5pm<br/>Saturday: 9am – 4pm<br/>Sunday: 12noon – 4pm",
-        contact: "02 6941 2555",
-        more_info: "http://www.tumut.nsw.gov.au/environment/waste-recycling.aspx",
-        active: true
-    },
-    {
-        town: "Gundagai",
-        name: "Gundagai Landfill & Recycling Centre ",
-        address: "Burra Road, Gundagai",
-        hours: "Monday: 7am – 11am<br/>Wednesday: 1pm – 5pm<br/>Friday: 7am - 11am<br/>Saturday: 11am – 5pm<br/>Sunday: 7am – 1pm<br/>(Closed Tuesday & Thursday)<br/>",
-        contact: "02 6944 0200",
-        more_info: "http://www.gundagai.nsw.gov.au/environment/waste-and-recyling.aspx",
-        active: true
-    },
-    {
-        town: "Junee",
-        name: "Junee Transfer Station",
-        address: "Kahmoo Road, Junee",
-        hours: "Tuesday: 8am – 4pm<br/>Wednesday: 10am – 4.30pm<br/>Friday: 11am – 5pm<br/>Saturday & Sunday: 10am – 4.30pm<br/>(Closed Monday & Thursday)",
-        contact: "02 6924 8100",
-        more_info: "http://www.junee.nsw.gov.au/services/rubbish-and-recycling.aspx",
-        active: true
-    },
-    {
         town: "Berrigan",
         name: "Berrigan Landfill",
         address: "Greenhills Road, Berrigan",
@@ -81,6 +27,24 @@ var locations = [
         active: false
     },
     {
+        town: "Coolamon",
+        name: "Coolamon Landfill",
+        address: "102 Dyces Lane, Coolamon",
+        hours: "Monday: 9am – 1pm<br/>Wednesday: 1pm – 5pm<br/>Friday: 9am – 12noon<br/>Saturday: 1pm - 5pm<br/>(Closed Tuesday, Thursday, Sunday)",
+        contact: "02 6930 1800",
+        more_info: "http://www.coolamon.nsw.gov.au/residents/waste-and-recycling.aspx",
+        active: true
+    },
+    {
+        town: "Cootamundra",
+        name: "Cootamundra Waste Transfer Station",
+        address: "Turners Lane, Cootamundra",
+        hours: "Monday, Tuesday, Thursday, Friday: 8.30am – 4.30pm<br/>Wednesday: 1.30pm – 4.30pm<br/>Saturday: 1pm – 5pm<br/>Sunday: 9am – 5pm",
+        contact: "02 6940 2100",
+        more_info: "http://www.cootamundra.nsw.gov.au/engineering/waste-recycling-drummuster.aspx",
+        active: true
+    },
+    {
         town: "Corowa",
         name: "Corowa Depot",
         address: "Poseidon Road, Corowa",
@@ -96,7 +60,7 @@ var locations = [
         hours: "Tuesday, Saturday, Sunday: 2pm – 5pm<br/>Thursday: 9am – 12noon<br/>(Closed Monday, Wednesday & Friday)",
         contact: "02 6029 8588",
         more_info: "http://www.greaterhume.nsw.gov.au/CouncilServices/WasteRecycling.aspx",
-        active: false
+        active: true
     },
     {
         town: "Deniliquin",
@@ -114,6 +78,15 @@ var locations = [
         hours: "Every day: 8am - 5pm",
         contact: "02 6963 6491",
         more_info: "https://www.griffith.nsw.gov.au/cp_themes/default/page.asp?p=DOC-KCB-52-46-17",
+        active: true
+    },
+    {
+        town: "Gundagai",
+        name: "Gundagai Landfill & Recycling Centre ",
+        address: "Burra Road, Gundagai",
+        hours: "Monday: 7am – 11am<br/>Wednesday: 1pm – 5pm<br/>Friday: 7am - 11am<br/>Saturday: 11am – 5pm<br/>Sunday: 7am – 1pm<br/>(Closed Tuesday & Thursday)<br/>",
+        contact: "02 6944 0200",
+        more_info: "http://www.gundagai.nsw.gov.au/environment/waste-and-recyling.aspx",
         active: true
     },
     {
@@ -144,6 +117,15 @@ var locations = [
         active: false
     },
     {
+        town: "Junee",
+        name: "Junee Transfer Station",
+        address: "Kahmoo Road, Junee",
+        hours: "Tuesday: 8am – 4pm<br/>Wednesday: 10am – 4.30pm<br/>Friday: 11am – 5pm<br/>Saturday & Sunday: 10am – 4.30pm<br/>(Closed Monday & Thursday)",
+        contact: "02 6924 8100",
+        more_info: "http://www.junee.nsw.gov.au/services/rubbish-and-recycling.aspx",
+        active: true
+    },
+    {
         town: "Leeton",
         name: "Leeton Landfill and Recycling Depot",
         address: "732 Corbie Hill Road, Leeton",
@@ -151,6 +133,15 @@ var locations = [
         contact: "02 6955 6384",
         more_info: "http://leeton.nsw.gov.au/environment/waste.htm",
         active: false
+    },
+    {
+        town: "Lockhart",
+        name: "Lockhart Waste Depot",
+        address: "Tip Road, Lockhart",
+        hours: "Wednesday: 8.30am – 10.30am<br/>Alternate Sunday: 8.30am – 11.30am",
+        contact: "02 6920 5305",
+        more_info: "http://www.lockhart.nsw.gov.au/environment/waste-recycling.aspx",
+        active: true
     },
     {
         town: "Moama",
@@ -177,7 +168,7 @@ var locations = [
         hours: "Tuesday, Wednesday, Friday: 8am – 12.30pm & 1.15pm – 5pm<br/>Saturday & Sunday: 1pm – 5pm<br/>(Closed Monday & Thursday)",
         contact: "02 6980 1100",
         more_info: "http://www.temora.nsw.gov.au/environment/waste-and-recycling.aspx",
-        active: false
+        active: true
     },
     {
         town: "Tumbarumba",
@@ -186,7 +177,16 @@ var locations = [
         hours: "Wednesday: 8am – 12noon & 12.30pm – 2pm<br/>Friday: 1pm – 5pm<br/>Saturday: 9am – 2pm<br/>Sunday: 1pm – 5pm (1-6 during daylight savings)",
         contact: "02 6948 9100",
         more_info: "http://www.tumbashire.nsw.gov.au/environment/waste-and-recycling",
-        active: false
+        active: true
+    },
+    {
+        town: "Tumut",
+        name: "Gilmore Waste & Recycling Centre",
+        address: "Killarney Drive, Tumut",
+        hours: "Tuesday & Thursday: 1pm – 5pm<br/>Saturday: 9am – 4pm<br/>Sunday: 12noon – 4pm",
+        contact: "02 6941 2555",
+        more_info: "http://www.tumut.nsw.gov.au/environment/waste-recycling.aspx",
+        active: true
     },
     {
         town: "Urana",
@@ -195,7 +195,7 @@ var locations = [
         hours: "Friday: 12noon – 5pm<br/>Sunday: 11am – 4pm",
         contact: "02 6930 9100",
         more_info: "http://www.urana.nsw.gov.au/CouncilServices/RubbishCollection.aspx",
-        active: false
+        active: true
     },
     {
         town: "West Wyalong",
@@ -204,6 +204,6 @@ var locations = [
         hours: "Monday – Friday: 8am - 12.30pm & 1.30pm - 4pm<br/>Saturday & Sunday: 10am – 3pm",
         contact: "02 6972 2266",
         more_info: "http://www.blandshire.nsw.gov.au/environment/tips",
-        active: false
+        active: true
     }
 ]
