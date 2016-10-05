@@ -80,7 +80,7 @@
         }
         else {
           var nameElement = document.getElementById('name');
-          nameElement.innerHTML = location.name;
+          nameElement.innerHTML = location.name + " (Opening Soon)";
           var addressElement = document.getElementById('address');
           addressElement.innerHTML = "Unavailable";
           var hoursElement = document.getElementById('hours');
@@ -117,18 +117,21 @@
 
       </div>
 
-      <div class="row">
-        <a class="btn btn-default col-md-4 col-md-offset-2" type="submit">REROC</a>
-        <a class="btn btn-default col-md-4" type="submit">RAMROC</a>
+      <div class="row" style="padding-top: 30px;">
+        <a class="btn btn-warning col-md-4 col-md-offset-2" type="submit">REROC</a>
+        <a class="btn btn-warning col-md-4" type="submit">RAMROC</a>
       </div>
 
       <img class="center-block" src="img/crc.jpg"/>
 
       <div class="container center-block">
+        <div class="row text-center">
+          <p class="lead">Drop off your problem waste at one of 23 Community Recycling Centre's in our region:</p>
+        </div>
         <div class="row" style="padding-bottom: 10px;">
 
           <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle col-md-4 col-md-offset-4" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <button class="btn btn-warning dropdown-toggle col-md-4 col-md-offset-4" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
               Select Location
               <span class="caret"></span>
             </button>
@@ -140,9 +143,9 @@
         <div class="row">
           <div class="jumbotron col-md-8 col-md-offset-2">
             <h2 id="name"></h2>
-            <h3>Address</h3><p id="address"></p>
-            <h3>Hours</h3><p id="hours"></p>
-            <h3>Contact</h3><p id="contact"></p>
+            <h3 style="color:#f58120"><em>Address</em></h3><p id="address"></p>
+            <h3 style="color:#f58120"><em>Hours</em></h3><p id="hours"></p>
+            <h3 style="color:#f58120"><em>Contact</em></h3><p id="contact"></p>
             <p><a id="moreinfo" class="btn btn-primary" href="#" role="button">More Info</a></p
           </div>
         </div>
