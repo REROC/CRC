@@ -76,7 +76,7 @@
           var contactElement = document.getElementById('contact');
           contactElement.innerHTML = location.contact;
           var moreInfoElement = document.getElementById('moreinfo');
-          moreInfoElement.setAttribute("href", location.more_info);          
+          moreInfoElement.setAttribute("href", location.more_info);
         }
         else {
           var nameElement = document.getElementById('name');
@@ -88,7 +88,7 @@
           var contactElement = document.getElementById('contact');
           contactElement.innerHTML = "Unavailable";
           var moreInfoElement = document.getElementById('moreinfo');
-          moreInfoElement.setAttribute("href", "#");          
+          moreInfoElement.setAttribute("href", location.more_info);
         }
 
       }
@@ -117,16 +117,32 @@
 
       </div>
 
-      <div class="row" style="padding-top: 30px;">
-        <a style="background-color: #004276; color: white;" class="btn col-md-4 col-md-offset-2" type="submit">REROC</a>
-        <a style="background-color: #004276; color: white;" class="btn col-md-4" type="submit">RAMROC</a>
+      <div class="row" style="padding-top: 50px;">
+        <a style="background-color: #004276; color: white; margin-left: 155px" class="btn col-md-4" type="submit" data-toggle="collapse" data-parent="#maps" href="#rerocMap" aria-expanded="true" aria-controls="rerocMap">REROC</a>
+        <a style="background-color: #004276; color: white; margin-left: 75px" class="btn col-md-4" type="submit" data-toggle="collapse" data-parent="#maps" href="#ramrocMap" aria-expanded="false" aria-controls="ramrocMap">RAMROC</a>
+      </div>
+
+      <div class="panel-group" id="maps" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default" style="border: 0px; -webkit-box-shadow: none; box-shadow: none;">
+          <div id="rerocMap" class="panel-collapse collapse" role="tabpanel" aria-labelledby="rerocMap">
+            <div class="panel-body text-center">
+                <img src="img/reroc_councils.jpg" alt="REROC Councils" style="width: 80%;"/>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default" style="border: 0px; -webkit-box-shadow: none; box-shadow: none;"> 
+          <div id="ramrocMap" class="panel-collapse collapse" role="tabpanel" aria-labelledby="ramrocMap">
+            <div class="panel-body text-center">
+            </div>
+          </div>
+        </div>
       </div>
 
       <img class="center-block" src="img/crc.jpg"/>
 
       <div class="container center-block">
         <div class="row text-center">
-          <p class="lead">Drop off your problem waste at one of 23 Community Recycling Centres in our region:</p>
+          <p class="lead">Drop off your problem waste at one of 24 Community Recycling Centres in our region:</p>
         </div>
         <div class="row" style="padding-bottom: 10px;">
 
@@ -188,10 +204,19 @@
       </p>
       
       <h3 style="color:#f58120" class="text-center">
-      For more information call the Environment Line on <span style="color:#000000">131 555</span>, contact your local<br/> council or visit <a href="http://www.epa.nsw.gov.au/recyclingcentres">www.epa.nsw.gov.au/recyclingcentres</a>
+      For more information call the Environment Line on <span style="color:#004276">131 555</span>, contact your local<br/> council or visit <a href="http://www.epa.nsw.gov.au/recyclingcentres" style="color:#004276">www.epa.nsw.gov.au/recyclingcentres</a>
       </h3>
 
       <br/></br/>
+
+      <div class="container">
+      <p class="row lead text-center" style="margin: 0 155px 0 155px">
+        Please click on the Take the Survey button below and tell us a little bit about how your household usually disposes of waste, how you heard about the CRCs and what council area you live in. You could win a $100 DIY store voucher* by completing the survey. To be eligible to win the prize you must be a resident in a council area listed in Question 1.
+        <br/></br/>
+        <i>*$100 voucher to be won per month until June 2017</i>
+        <br/></br/>
+      </p>
+      </div>
 
       <p class="text-center">
       <a href="https://www.surveymonkey.com/r/J387SJM" class="text-center btn btn-lg btn-warning">Take the Survey</a>

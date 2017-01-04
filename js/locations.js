@@ -1,4 +1,13 @@
-var locations = [
+ var locations = [
+    {
+        town: "Albury",
+        name: "Albury Waste Management Centre",
+        address: "Waste Road, off Mudge Street, Hamilton Valley",
+        hours: "Monday to Friday 9am – 5pm<br/>Saturday and Sunday 9am – 4pm",
+        contact: "6043 5860",
+        more_info: "http://www.alburycity.nsw.gov.au/environment-and-waste/waste-and-recycling/albury-recycling-centre",
+        active: true
+    },
     {
         town: "Berrigan",
         name: "Berrigan Landfill",
