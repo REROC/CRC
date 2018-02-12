@@ -33,7 +33,7 @@
         hours: "Tuesday, Thursday, Sunday: 9.30am – 11.30am",
         contact: "02 6960 5500",
         more_info: "http://www.murrumbidgee.nsw.gov.au/environment/waste-recycling",
-        active: false
+        active: true
     },
     {
         town: "Coolamon",
@@ -105,7 +105,7 @@
         hours: "Monday: 12noon – 6pm<br/>Tuesday, Wednesday, Thursday, Saturday, Sunday: 7.30am – 6pm<br/>Friday: 7.30am – 1pm",
         contact: "02 6990 1100",
         more_info: "http://hay.nsw.gov.au/CouncilServices/WasteRecycling/tabid/75/Default.aspx",
-        active: false
+        active: true
     },
     {
         town: "Hillston",
@@ -114,7 +114,7 @@
         hours: "Tuesday & Friday: 7.30am – 10am & 1pm – 5pm<br/>Wednesday & Thursday: 7.30am – 10am<br/>Sunday: 10am – 4pm<br/>(Closed Sat & Mon)",
         contact: "02 6965 1900",
         more_info: "http://www.carrathool.nsw.gov.au/environmental-services/landfils-and-waste-collection",
-        active: false
+        active: true
     },
     {
         town: "Jerilderie",
@@ -123,7 +123,7 @@
         hours: "Mon & Fri: 8–11am<br/>Wed: 3–6pm<br/>Sun: 2–5pm<br/>Total fire ban day:<br/>Mon & Fri: 8–9am<br/>Wed: 3–4pm<br/>Sun: 2–3pm",
         contact: "03 5886 1200",
         more_info: "http://www.jerilderie.nsw.gov.au/environment/waste-recycling.aspx",
-        active: false
+        active: true
     },
     {
         town: "Junee",
@@ -141,7 +141,7 @@
         hours: "9am–5.40pm every day (AEDT)<br/>or 8am–4.40pm every day (AEST)<br/>(Closed most public holidays)",
         contact: "02 6955 6384",
         more_info: "http://leeton.nsw.gov.au/environment/waste.htm",
-        active: false
+        active: true
     },
     {
         town: "Lockhart",
@@ -168,7 +168,7 @@
         hours: "Tuesday, Wednesday, Friday: 9am – 12pm & 1pm - 5pm<br/>Saturday & Sunday: 10am – 3pm",
         contact: "02 6959 3531",
         more_info: "http://www.narrandera.nsw.gov.au/cp_themes/default/page.asp?p=DOC-DGU-06-50-24",
-        active: false
+        active: true
     },
     {
         town: "Temora",
