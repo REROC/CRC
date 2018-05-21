@@ -15,7 +15,7 @@
         hours: "Tuesday to Thursday 1:30-4pm<br/>Sunday 12:30-4pm",
         contact: "03 5888 5100",
         more_info: "http://www.berriganshire.nsw.gov.au/Residents/GarbageRecycling.aspx",
-        active: false
+        active: true
     },
     {
         town: "Blighty",
@@ -24,7 +24,7 @@
         hours: "Contact council for opening hours",
         contact: "03 5880 1200",
         more_info: "http://www.conargo.nsw.gov.au/environment/waste-and-recycling",
-        active: false
+        active: true
     },
     {
         town: "Coleambally",
@@ -60,7 +60,7 @@
         hours: "Monday to Friday, 7:30am to 4pm",
         contact: "02 6033 8999",
         more_info: "http://www.corowa.nsw.gov.au/council/waste/",
-        active: false
+        active: true
     },
     {
         town: "Culcairn",
@@ -159,7 +159,7 @@
         hours: "Monday to Friday 8am to 3pm<br/>Saturday and Sunday 9am to 3pm<br/>Closed Public Holidays",
         contact: "03 5884 3302",
         more_info: "http://www.murray.nsw.gov.au/your-environment/waste-and-recycling",
-        active: false
+        active: true
     },
     {
         town: "Narrandera",
