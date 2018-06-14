@@ -12,7 +12,7 @@
         town: "Berrigan",
         name: "Berrigan Landfill",
         address: "Greenhills Road, Berrigan",
-        hours: "Tuesday to Thursday 1:30-4pm<br/>Sunday 12:30-4pm",
+        hours: "Tuesday and Thursday 1:30-4pm<br/>Sunday 12:30-4pm",
         contact: "03 5888 5100",
         more_info: "http://www.berriganshire.nsw.gov.au/Residents/GarbageRecycling.aspx",
         active: true
@@ -21,8 +21,8 @@
         town: "Blighty",
         name: "Blighty Landfill",
         address: "Riverina Highway, Blighty",
-        hours: "Contact council for opening hours",
-        contact: "03 5880 1200",
+        hours: "Thursday and Sunday 2pm – 6pm (daylight savings time)<br/>Thursday and Sunday 1pm – 5pm (non-daylight savings time)",
+        contact: "03 5898 3000",
         more_info: "http://www.conargo.nsw.gov.au/environment/waste-and-recycling",
         active: true
     },
@@ -157,7 +157,7 @@
         name: "Moama Waste Management Facility",
         address: "Centre Road, Moama",
         hours: "Monday to Friday 8am to 3pm<br/>Saturday and Sunday 9am to 3pm<br/>Closed Public Holidays",
-        contact: "03 5884 3302",
+        contact: "1300 087 004",
         more_info: "http://www.murray.nsw.gov.au/your-environment/waste-and-recycling",
         active: true
     },
@@ -202,7 +202,7 @@
         name: "Urana Waste Disposal Centre",
         address: "Boree Creek Road, Urana",
         hours: "Friday: 12noon – 5pm<br/>Sunday: 11am – 4pm",
-        contact: "02 6930 9100",
+        contact: "02 6033 8999",
         more_info: "http://www.urana.nsw.gov.au/CouncilServices/RubbishCollection.aspx",
         active: true
     },
