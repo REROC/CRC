@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2771776-51"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-2771776-51');
+    </script>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,6 +33,11 @@
         right: auto;
         text-align: center;
         transform: translate(-50%, 0);
+      }
+
+      .center-flex {
+        display: flex;
+        justify-content: center;
       }
     </style>
   </head>
@@ -96,22 +111,28 @@
 
     <div class="container center-block">
 
-      <div class="row center-block">
-        <div class="col-md-3 col-md-offset-2">
+      <div class="row center-block center-flex">
+        <div class="col-md-3">
           <a href="http://waste.reroc.com.au">
-          <img src="img/reroc_waste.jpg" alt="REROC" style="width: 100%;"/>
+          <img class="center-block" src="img/reroc_waste.jpg" alt="REROC" style="width: 100%;"/>
           </a>
         </div>
 
         <div class="col-md-2">
           <a href="http://ramroc.org.au">
-          <img src="img/ramroc.jpg" alt="RAMROC" style="width: 70%;"/>
+          <img class="center-block" src="img/RAMJO_logo.jpg" alt="RAMJO" style="width: 70%;"/>
+          </a>
+        </div>
+
+        <div class="col-md-2">
+          <a href="http://ramroc.org.au">
+          <img class="center-block" src="img/RAMJO_waste.jpg" alt="RAMJO Waste" style="width: 70%;"/>
           </a>
         </div>
 
         <div class="col-md-3">
           <a href="http://www.reroc.com.au">
-          <img src="img/reroc.jpg" alt="REROC" style="width: 100%;"/>
+          <img class="center-block" src="img/reroc.jpg" alt="REROC" style="width: 100%;"/>
           </a>
         </div>
 
@@ -119,7 +140,7 @@
 
       <div class="row" style="padding-top: 50px;">
         <a style="background-color: #004276; color: white; margin-left: 155px" class="btn col-md-4" type="submit" data-toggle="collapse" data-parent="#maps" href="#rerocMap" aria-expanded="true" aria-controls="rerocMap">REROC</a>
-        <a style="background-color: #004276; color: white; margin-left: 75px" class="btn col-md-4" type="submit" data-toggle="collapse" data-parent="#maps" href="#ramrocMap" aria-expanded="false" aria-controls="ramrocMap">RAMROC</a>
+        <a style="background-color: #004276; color: white; margin-left: 75px" class="btn col-md-4" type="submit" data-toggle="collapse" data-parent="#maps" href="#ramrocMap" aria-expanded="false" aria-controls="ramrocMap">RAMJO</a>
       </div>
 
       <div class="panel-group" id="maps" role="tablist" aria-multiselectable="true">
@@ -133,6 +154,7 @@
         <div class="panel panel-default" style="border: 0px; -webkit-box-shadow: none; box-shadow: none;"> 
           <div id="ramrocMap" class="panel-collapse collapse" role="tabpanel" aria-labelledby="ramrocMap">
             <div class="panel-body text-center">
+              <img src="img/ramjo_map.jpg" alt="REROC Councils" style="width: 80%;"/>
             </div>
           </div>
         </div>
