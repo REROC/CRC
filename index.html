@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2771776-51"></script>
     <script>
@@ -13,242 +13,222 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title>Community Recycling Centres</title>
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <style>
-      .dropdown-menu {
-        left: 50%;
-        right: auto;
-        text-align: center;
-        transform: translate(-50%, 0);
-      }
-
-      .center-flex {
-        display: flex;
-        justify-content: center;
-      }
-    </style>
-  </head>
-  <body>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
     <script src="js/locations.js"></script>
 
     <!-- Town information display/dropdown -->
     <script>
-      $(document).ready(function(){
+        document.addEventListener("DOMContentLoaded", function() {
 
-        // Select first active location
-        for (var i = 0, len = locations.length; i < len; i++) {
-          if(locations[i].active) {
-            updateJumbotron(locations[i]);
-            break;
-          }
+            // Select first active location
+            for (var i = 0, len = locations.length; i < len; i++) {
+                if(locations[i].active) {
+                updateJumbotron(locations[i]);
+                break;
+                }
+            }
+
+            var list = document.getElementById('dropdown-list');
+            for (var i = 0, len = locations.length; i < len; i++) {
+                var item = document.createElement('li');
+                var a_tag = document.createElement('a');
+                a_tag.appendChild(document.createTextNode(locations[i].town));
+                addListener(a_tag, locations[i]);
+                item.appendChild(a_tag);
+                list.appendChild(item);
+            }
+        });
+
+        function addListener(a_tag, location) {
+            a_tag.addEventListener('click', function(){
+                updateJumbotron(location);
+                toggleDropdown();
+                gtag('event', 'Select', {
+                    'event_category': 'Locations',
+                    'event_label': location.town
+                });
+            }, false);
         }
 
-        var list = document.getElementById('dropdown-list');
-        for (var i = 0, len = locations.length; i < len; i++) {
-            var item = document.createElement('li');
-            var a_tag = document.createElement('a');
-            a_tag.appendChild(document.createTextNode(locations[i].town));
-            a_tag.setAttribute("data-target", "#");
-            addListener(a_tag, locations[i]);
-            item.appendChild(a_tag);
-            list.appendChild(item);
-        }
-      });
+        function updateJumbotron(location) {
 
-      function addListener(a_tag, location) {
-        a_tag.addEventListener('click', function(){
-          updateJumbotron(location);
-        }, false);
-      }
+            if (location.active == true) {
+                var nameElement = document.getElementById('name');
+                nameElement.innerHTML = location.name;
+                var addressElement = document.getElementById('address');
+                addressElement.innerHTML = location.address;
+                var hoursElement = document.getElementById('hours');
+                hoursElement.innerHTML = location.hours;
+                var contactElement = document.getElementById('contact');
+                contactElement.innerHTML = location.contact;
+                var moreInfoElement = document.getElementById('moreinfo');
+                moreInfoElement.setAttribute("href", location.more_info);
+            }
+            else {
+                var nameElement = document.getElementById('name');
+                nameElement.innerHTML = location.name + " (Opening Soon)";
+                var addressElement = document.getElementById('address');
+                addressElement.innerHTML = "Unavailable";
+                var hoursElement = document.getElementById('hours');
+                hoursElement.innerHTML = "Unavailable";
+                var contactElement = document.getElementById('contact');
+                contactElement.innerHTML = "Unavailable";
+                var moreInfoElement = document.getElementById('moreinfo');
+                moreInfoElement.setAttribute("href", location.more_info);
+            }
+            moreInfoElement.onclick = function() {
+                trackOutboundLink(location.more_info)
+            };
 
-      function updateJumbotron(location) {
-
-        if (location.active == true) {
-          var nameElement = document.getElementById('name');
-          nameElement.innerHTML = location.name;
-          var addressElement = document.getElementById('address');
-          addressElement.innerHTML = location.address;
-          var hoursElement = document.getElementById('hours');
-          hoursElement.innerHTML = location.hours;
-          var contactElement = document.getElementById('contact');
-          contactElement.innerHTML = location.contact;
-          var moreInfoElement = document.getElementById('moreinfo');
-          moreInfoElement.setAttribute("href", location.more_info);
-        }
-        else {
-          var nameElement = document.getElementById('name');
-          nameElement.innerHTML = location.name + " (Opening Soon)";
-          var addressElement = document.getElementById('address');
-          addressElement.innerHTML = "Unavailable";
-          var hoursElement = document.getElementById('hours');
-          hoursElement.innerHTML = "Unavailable";
-          var contactElement = document.getElementById('contact');
-          contactElement.innerHTML = "Unavailable";
-          var moreInfoElement = document.getElementById('moreinfo');
-          moreInfoElement.setAttribute("href", location.more_info);
         }
 
-      }
+        function toggleDropdown() {
+            var dropdownDiv = document.getElementById('dropdown-div');
+            dropdownDiv.classList.toggle('open');
+            var dropdownButtonAria = document.getElementById("dropdownMenu").getAttribute("aria-expanded");
+            if (dropdownButtonAria =="true") {
+                dropdownButtonAria = "false";
+            } else {
+                dropdownButtonAria = "true";
+            }
+            document.getElementById("dropdownMenu").setAttribute("aria-expanded", dropdownButtonAria);
+        }
+
+        function toggleMap(mapId) {
+
+            var allPanels = document.getElementsByClassName("panel");
+            for(panel of allPanels) {
+                if (panel.getAttribute('id') != mapId) {
+                    panel.classList.add('collapse');
+                }
+            }
+            var mapPanel = document.getElementById(mapId);
+            mapPanel.classList.toggle('collapse');
+        }
+
+        function trackOutboundLink(link) {
+            gtag('event', 'Click', {
+                'event_category': 'Outbound',
+                'event_label': link
+            })
+        }
     </script>
 
-    <div class="container center-block">
+    <div class="container">
 
-      <div class="row center-block center-flex">
-        <div class="col-md-3">
-          <a href="http://waste.reroc.com.au">
-          <img class="center-block" src="img/reroc_waste.jpg" alt="REROC" style="width: 100%;"/>
-          </a>
+        <div class="header">
+            <a href="http://waste.reroc.com.au" onclick='trackOutboundLink("http://waste.reroc.com.au")'>
+                <img src="img/reroc_waste.jpg" alt="REROC"/>
+            </a>
+
+            <a href="http://ramroc.org.au" onclick='trackOutboundLink("http://ramroc.org.au")'>
+                <img src="img/RAMJO_logo.jpg" alt="RAMJO"/>
+            </a>
+
+            <a href="http://ramroc.org.au" onclick='trackOutboundLink("http://ramroc.org.au")'>
+                <img src="img/RAMJO_waste.jpg" alt="RAMJO Waste"/>
+            </a>
+
+            <a href="http://ramroc.org.au" onclick='trackOutboundLink("http://ramroc.org.au")'>
+                <img src="img/RAMJO_murray_waste.png" alt="RAMJO Murray Waste"/>
+            </a>
+
+            <a href="http://www.reroc.com.au" onclick='trackOutboundLink("http://reroc.com.au")'>
+                <img src="img/reroc.jpg" alt="REROC"/>
+            </a>
         </div>
-
-        <div class="col-md-2">
-          <a href="http://ramroc.org.au">
-          <img class="center-block" src="img/RAMJO_logo.jpg" alt="RAMJO" style="width: 70%;"/>
-          </a>
-        </div>
-
-        <div class="col-md-2">
-          <a href="http://ramroc.org.au">
-          <img class="center-block" src="img/RAMJO_waste.jpg" alt="RAMJO Waste" style="width: 70%;"/>
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a href="http://www.reroc.com.au">
-          <img class="center-block" src="img/reroc.jpg" alt="REROC" style="width: 100%;"/>
-          </a>
-        </div>
-
-      </div>
-
-      <div class="row" style="padding-top: 50px;">
-        <a style="background-color: #004276; color: white; margin-left: 155px" class="btn col-md-4" type="submit" data-toggle="collapse" data-parent="#maps" href="#rerocMap" aria-expanded="true" aria-controls="rerocMap">REROC</a>
-        <a style="background-color: #004276; color: white; margin-left: 75px" class="btn col-md-4" type="submit" data-toggle="collapse" data-parent="#maps" href="#ramrocMap" aria-expanded="false" aria-controls="ramrocMap">RAMJO</a>
-      </div>
-
-      <div class="panel-group" id="maps" role="tablist" aria-multiselectable="true">
-        <div class="panel panel-default" style="border: 0px; -webkit-box-shadow: none; box-shadow: none;">
-          <div id="rerocMap" class="panel-collapse collapse" role="tabpanel" aria-labelledby="rerocMap">
-            <div class="panel-body text-center">
-                <img src="img/reroc_councils.jpg" alt="REROC Councils" style="width: 80%;"/>
-            </div>
-          </div>
-        </div>
-        <div class="panel panel-default" style="border: 0px; -webkit-box-shadow: none; box-shadow: none;"> 
-          <div id="ramrocMap" class="panel-collapse collapse" role="tabpanel" aria-labelledby="ramrocMap">
-            <div class="panel-body text-center">
-              <img src="img/ramjo_map.jpg" alt="REROC Councils" style="width: 80%;"/>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <img class="center-block" src="img/crc.jpg"/>
-
-      <div class="container center-block">
-        <div class="row text-center">
-          <p class="lead">Drop off your problem waste at one of 24 Community Recycling Centres in our region:</p>
-        </div>
-        <div class="row" style="padding-bottom: 10px;">
-
-          <div class="dropdown">
-            <button style="background-color: #004276; color: white;" class="btn dropdown-toggle col-md-4 col-md-offset-4" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              Select Location
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="dropdown-list">
-            </ul>
-          </div>
-
-        </div>
-        <div class="row">
-          <div class="jumbotron col-md-8 col-md-offset-2">
-            <p id="name"></p>
-            <h3 style="color:#f58120"><em>Address</em></h3><p id="address"></p>
-            <h3 style="color:#f58120"><em>Hours</em></h3><p id="hours"></p>
-            <h3 style="color:#f58120"><em>Contact</em></h3><p id="contact"></p>
-            <p><a id="moreinfo" class="btn btn-primary" href="#" role="button">More Info</a></p
-          </div>
-        </div>
-
-      </div>
-
-      <div class="container">
-
-      <div class="row col-md-14">
-        <div class="col-md-4">
-        <h3 class="text-right" style="color:#f58120">Why use the Community<br/>Recycling Centres?</h3>
-        </div>
-        <div class="col-md-6">
-        <p class="lead">Most of the waste accepted at Community Recycling Centres can be reused or recycled. By sorting your waste and taking it to your local centre, you will:</p>
-        <ul>
-        <li class="lead">Help improve resource recovery rates</li>
-        <li class="lead">Save water, energy and other valuable natural resources</li>
-        </ul>
-        </div>
-      </div>
-      </div>
-
-      <br/></br/>
-
-      <div class="container">
-      <div class="row col-md-14">
-        <div class="col-md-4">
-        <h3 class="text-right" style="color:#f58120">Storing and transporting<br/>your wastes</h3>
-        </div>
-        <div class="col-md-6">
-        <p class="lead">Handle and transport your materials carefully and safely. Protect your vehicle by placing items on a protective sheet or tray in the boot to capture any leakages or breakages.</p>
-        </div>
-      </div>
-      </div>
-
-      <br/><br/>
-
-      <p class="text-center">
-      <iframe width="640" height="360" src="https://www.youtube.com/embed/T4YjBfdD3mU?rel=0&amp;showinfo=0" frameborder="0"></iframe>
-      </p>
-      
-      <h3 style="color:#f58120" class="text-center">
-      For more information call the Environment Line on <span style="color:#004276">131 555</span>, contact your local<br/> council or visit <a href="http://www.epa.nsw.gov.au/recyclingcentres" style="color:#004276">www.epa.nsw.gov.au/recyclingcentres</a>
-      </h3>
-
-      <br/></br/>
-
-      <div class="container">
-      <p class="row lead text-center" style="margin: 0 155px 0 155px">
-        Please click on the Take the Survey button below and tell us a little bit about how your household usually disposes of waste, how you heard about the CRCs and what council area you live in.
-        <br/></br/>
-      </p>
-      </div>
-
-      <p class="text-center">
-      <a href="https://www.surveymonkey.com/r/J387SJM" class="text-center btn btn-lg btn-warning">Take the Survey</a>
-      </p>
-
-      <a href="http://www.epa.nsw.gov.au">
-        <img class="center-block" src="img/epa.jpg"/>
-      </a>
-
-      <p class="text-center">This is a NSW EPA Waste Less, Recycle More initiative funded from the Waste Levy</p>
-
     </div>
+    <img class="hero" src="img/crc.jpg" alt="REROC"/>
+    <div class="container">
+        <div class="maps">
+            <div class="map-toggle">
+                <a class="btn" onclick="toggleMap('rerocMap')">REROC</a>
+                <a class="btn" onclick="toggleMap('ramrocMap')">RAMJO</a>
+            </div>
 
-  </body>
+            <div class="panel-group">
+                <div id="rerocMap" class="panel collapse">
+                    <img src="img/reroc_councils.jpg" alt="REROC Councils"/>
+                </div>
+                <div id="ramrocMap" class="panel collapse"> 
+                    <img src="img/ramjo_map.jpg" alt="REROC Councils"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="locations">
+            <p>Drop off your problem waste at one of 24 Community Recycling Centres in our region:</p>
+    
+            <div class="dropdown" id="dropdown-div">
+                <button class="btn" type="button" id="dropdownMenu" aria-haspopup="true" aria-expanded="false" onclick=toggleDropdown()>
+                    Select Location
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu" id="dropdown-list"></ul>
+            </div>
+
+
+
+            <div class="jumbotron">
+                <p id="name"></p>
+                <h3>Address</h3><p id="address"></p>
+                <h3>Hours</h3><p id="hours"></p>
+                <h3>Contact</h3><p id="contact"></p>
+                <a id="moreinfo" class="btn" role="button">More Info</a>
+            </div>
+        </div>
+
+
+
+        
+        <div class="info">
+            <div class="card">
+                <div class="title"><h2>Why use the Community Recycling Centres?</h2></div>
+                <div class="content">
+                    <p>Most of the waste accepted at Community Recycling Centres can be reused or recycled. By sorting your waste and taking it to your local centre, you will:</p>
+                    <ul>
+                        <li>Help improve resource recovery rates</li>
+                        <li>Save water, energy and other valuable natural resources</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div class="title"><h2>Storing and transporting your wastes</h2></div>
+                <div class="content">
+                    <p>Handle and transport your materials carefully and safely. Protect your vehicle by placing items on a protective sheet or tray in the boot to capture any leakages or breakages.</p>
+                </div>
+            </div>
+        </div>
+        <div class="video-container">
+            <iframe class="video" src="https://www.youtube.com/embed/T4YjBfdD3mU?rel=0&amp;showinfo=0" frameborder="0"></iframe>
+        </div>
+
+        <div class="title more-info">
+            <h3>
+                For more information call the Environment Line on <span class="link">131 555</span>, contact your local council or visit <a href="http://www.epa.nsw.gov.au/recyclingcentres" class="link" onclick='trackOutboundLink("http://www.epa.nsw.gov.au/recyclingcentres")'>www.epa.nsw.gov.au/recyclingcentres</a>
+            </h3>
+        </div>
+        
+        <div class="survey">
+            <p>Please click on the Take the Survey button below and tell us a little bit about how your household usually disposes of waste, how you heard about the CRCs and what council area you live in.</p>
+            <a href="https://www.surveymonkey.com/r/J387SJM" class="btn" onclick='trackOutboundLink("https://www.surveymonkey.com/r/J387SJM")'>Take the Survey</a>
+        </div>
+
+        <footer class="footer">
+                <a href="http://www.epa.nsw.gov.au" class="epa" onclick='trackOutboundLink("http://www.epa.nsw.gov.au")'>
+                    <img src="img/epa.jpg"/>
+                </a>
+            
+                <p>This is a NSW EPA Waste Less, Recycle More initiative funded from the Waste Levy</p>
+        </footer>
+    </div>
+    
+</body>
 </html>
